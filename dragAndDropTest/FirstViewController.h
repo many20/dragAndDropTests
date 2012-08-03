@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DragDropManager.h"
 
 @interface FirstViewController : UIViewController
+
+@property (nonatomic, strong) DragDropManager *dragDropManager;
+
+@property (nonatomic, strong) IBOutletCollection(UIView) NSArray *draggableSubjects;
+@property (nonatomic, strong) IBOutletCollection(UIView) NSArray *droppableAreas;
 
 @end

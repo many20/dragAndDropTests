@@ -26,6 +26,9 @@
 		AC262D8415C8074D0093134C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC262D5715C8074C0093134C /* Foundation.framework */; };
 		AC262D8C15C8074D0093134C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC262D8A15C8074D0093134C /* InfoPlist.strings */; };
 		AC262D8F15C8074D0093134C /* dragAndDropTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC262D8E15C8074D0093134C /* dragAndDropTestTests.m */; };
+		AC262D9B15C80BD70093134C /* DragDropManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AC262D9A15C80BD70093134C /* DragDropManager.m */; };
+		AC262D9E15C80D180093134C /* DragContext.m in Sources */ = {isa = PBXBuildFile; fileRef = AC262D9D15C80D180093134C /* DragContext.m */; };
+		AC262DA115C814B60093134C /* NSArray+Indexing.m in Sources */ = {isa = PBXBuildFile; fileRef = AC262DA015C814B60093134C /* NSArray+Indexing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,12 @@
 		AC262D8B15C8074D0093134C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AC262D8D15C8074D0093134C /* dragAndDropTestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dragAndDropTestTests.h; sourceTree = "<group>"; };
 		AC262D8E15C8074D0093134C /* dragAndDropTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dragAndDropTestTests.m; sourceTree = "<group>"; };
+		AC262D9915C80BD70093134C /* DragDropManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragDropManager.h; sourceTree = "<group>"; };
+		AC262D9A15C80BD70093134C /* DragDropManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragDropManager.m; sourceTree = "<group>"; };
+		AC262D9C15C80D180093134C /* DragContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragContext.h; sourceTree = "<group>"; };
+		AC262D9D15C80D180093134C /* DragContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragContext.m; sourceTree = "<group>"; };
+		AC262D9F15C814B60093134C /* NSArray+Indexing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Indexing.h"; sourceTree = "<group>"; };
+		AC262DA015C814B60093134C /* NSArray+Indexing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Indexing.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +105,7 @@
 			children = (
 				AC262D5B15C8074C0093134C /* dragAndDropTest */,
 				AC262D8715C8074D0093134C /* dragAndDropTestTests */,
+				AC262D9815C807740093134C /* Resources */,
 				AC262D5415C8074C0093134C /* Frameworks */,
 				AC262D5215C8074C0093134C /* Products */,
 			);
@@ -130,12 +140,14 @@
 				AC262D6A15C8074C0093134C /* MainStoryboard_iPad.storyboard */,
 				AC262D6D15C8074C0093134C /* FirstViewController.h */,
 				AC262D6E15C8074C0093134C /* FirstViewController.m */,
-				AC262D7015C8074C0093134C /* first.png */,
-				AC262D7215C8074C0093134C /* first@2x.png */,
 				AC262D7415C8074C0093134C /* SecondViewController.h */,
 				AC262D7515C8074C0093134C /* SecondViewController.m */,
-				AC262D7715C8074C0093134C /* second.png */,
-				AC262D7915C8074C0093134C /* second@2x.png */,
+				AC262D9915C80BD70093134C /* DragDropManager.h */,
+				AC262D9A15C80BD70093134C /* DragDropManager.m */,
+				AC262D9C15C80D180093134C /* DragContext.h */,
+				AC262D9D15C80D180093134C /* DragContext.m */,
+				AC262D9F15C814B60093134C /* NSArray+Indexing.h */,
+				AC262DA015C814B60093134C /* NSArray+Indexing.m */,
 				AC262D5C15C8074C0093134C /* Supporting Files */,
 			);
 			path = dragAndDropTest;
@@ -169,6 +181,18 @@
 				AC262D8A15C8074D0093134C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC262D9815C807740093134C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC262D7015C8074C0093134C /* first.png */,
+				AC262D7215C8074C0093134C /* first@2x.png */,
+				AC262D7715C8074C0093134C /* second.png */,
+				AC262D7915C8074C0093134C /* second@2x.png */,
+			);
+			name = Resources;
+			path = dragAndDropTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +311,9 @@
 				AC262D6615C8074C0093134C /* AppDelegate.m in Sources */,
 				AC262D6F15C8074C0093134C /* FirstViewController.m in Sources */,
 				AC262D7615C8074C0093134C /* SecondViewController.m in Sources */,
+				AC262D9B15C80BD70093134C /* DragDropManager.m in Sources */,
+				AC262D9E15C80D180093134C /* DragContext.m in Sources */,
+				AC262DA115C814B60093134C /* NSArray+Indexing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

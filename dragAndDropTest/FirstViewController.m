@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "NSArray+Indexing.h"
 
 @interface FirstViewController ()
 
@@ -17,13 +18,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.dragDropManager = [[DragDropManager alloc] initWithDragSubjects:self.draggableSubjects andDropAreas:self.droppableAreas andRecogniserView:self.view];
+    
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
+    
+    self.dragDropManager = nil;
+    
+    self.draggableSubjects = nil;
+    self.droppableAreas = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
