@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define ANIMATION_TIME 0.15f
+
+
 @interface DragContext : NSObject
 
 @property (nonatomic, strong) UIView *draggedView;

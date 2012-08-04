@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
@@ -20,7 +19,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="2i2-er-42F">
-                                <rect key="frame" x="0.0" y="110" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="134" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="first.png" id="8hM-lh-zVa">
@@ -47,7 +46,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="WiD-QD-XX9">
-                                <rect key="frame" x="0.0" y="188" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="204" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="UDf-x9-LX1">
@@ -59,7 +58,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="JQo-ld-b92">
-                                <rect key="frame" x="0.0" y="266" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="274" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="ohG-jC-NZM">
+                                <rect key="frame" x="0.0" y="64" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -77,6 +81,7 @@
                         <outletCollection property="draggableSubjects" destination="vHs-ZL-ymZ" id="hCh-r2-2fJ"/>
                         <outletCollection property="draggableSubjects" destination="Emi-Rl-tFU" id="efc-Wz-LFx"/>
                         <outletCollection property="draggableSubjects" destination="Qw6-0d-Hcm" id="uB1-fA-o3f"/>
+                        <outletCollection property="droppableAreas" destination="ohG-jC-NZM" id="YAx-Qs-oy7"/>
                     </connections>
                 </viewController>
             </objects>

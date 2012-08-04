@@ -23,7 +23,7 @@
 }
 
 - (void)snapToOriginalPosition {
-    [UIView animateWithDuration:0.2f animations:^{
+    [UIView animateWithDuration:ANIMATION_TIME animations:^{
         CGRect frame = self.draggedView.frame;
         frame.origin = self.newPosition;
         self.draggedView.frame = frame;
