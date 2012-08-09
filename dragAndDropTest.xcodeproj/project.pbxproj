@@ -29,6 +29,9 @@
 		AC262D9B15C80BD70093134C /* DragDropManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AC262D9A15C80BD70093134C /* DragDropManager.m */; };
 		AC262D9E15C80D180093134C /* DragContext.m in Sources */ = {isa = PBXBuildFile; fileRef = AC262D9D15C80D180093134C /* DragContext.m */; };
 		AC262DA115C814B60093134C /* NSArray+Indexing.m in Sources */ = {isa = PBXBuildFile; fileRef = AC262DA015C814B60093134C /* NSArray+Indexing.m */; };
+		AC393BF115CFE1D40043D2AB /* UIScrollViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC393BF015CFE1D40043D2AB /* UIScrollViewDelegate.m */; };
+		AC6E630F15D3FB3400CB309C /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6E630E15D3FB3400CB309C /* ThirdViewController.m */; };
+		AC6E631315D3FEF100CB309C /* DragDropManager2.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6E631215D3FEF100CB309C /* DragDropManager2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,12 @@
 		AC262D9D15C80D180093134C /* DragContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragContext.m; sourceTree = "<group>"; };
 		AC262D9F15C814B60093134C /* NSArray+Indexing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Indexing.h"; sourceTree = "<group>"; };
 		AC262DA015C814B60093134C /* NSArray+Indexing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Indexing.m"; sourceTree = "<group>"; };
+		AC393BEF15CFE1D40043D2AB /* UIScrollViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIScrollViewDelegate.h; sourceTree = "<group>"; };
+		AC393BF015CFE1D40043D2AB /* UIScrollViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIScrollViewDelegate.m; sourceTree = "<group>"; };
+		AC6E630D15D3FB3400CB309C /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		AC6E630E15D3FB3400CB309C /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		AC6E631115D3FEF100CB309C /* DragDropManager2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragDropManager2.h; sourceTree = "<group>"; };
+		AC6E631215D3FEF100CB309C /* DragDropManager2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragDropManager2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,12 +149,18 @@
 				AC262D6A15C8074C0093134C /* MainStoryboard_iPad.storyboard */,
 				AC262D6D15C8074C0093134C /* FirstViewController.h */,
 				AC262D6E15C8074C0093134C /* FirstViewController.m */,
-				AC262D7415C8074C0093134C /* SecondViewController.h */,
-				AC262D7515C8074C0093134C /* SecondViewController.m */,
 				AC262D9915C80BD70093134C /* DragDropManager.h */,
 				AC262D9A15C80BD70093134C /* DragDropManager.m */,
 				AC262D9C15C80D180093134C /* DragContext.h */,
 				AC262D9D15C80D180093134C /* DragContext.m */,
+				AC262D7415C8074C0093134C /* SecondViewController.h */,
+				AC262D7515C8074C0093134C /* SecondViewController.m */,
+				AC393BEF15CFE1D40043D2AB /* UIScrollViewDelegate.h */,
+				AC393BF015CFE1D40043D2AB /* UIScrollViewDelegate.m */,
+				AC6E630D15D3FB3400CB309C /* ThirdViewController.h */,
+				AC6E630E15D3FB3400CB309C /* ThirdViewController.m */,
+				AC6E631115D3FEF100CB309C /* DragDropManager2.h */,
+				AC6E631215D3FEF100CB309C /* DragDropManager2.m */,
 				AC262D9F15C814B60093134C /* NSArray+Indexing.h */,
 				AC262DA015C814B60093134C /* NSArray+Indexing.m */,
 				AC262D5C15C8074C0093134C /* Supporting Files */,
@@ -314,6 +329,9 @@
 				AC262D9B15C80BD70093134C /* DragDropManager.m in Sources */,
 				AC262D9E15C80D180093134C /* DragContext.m in Sources */,
 				AC262DA115C814B60093134C /* NSArray+Indexing.m in Sources */,
+				AC393BF115CFE1D40043D2AB /* UIScrollViewDelegate.m in Sources */,
+				AC6E630F15D3FB3400CB309C /* ThirdViewController.m in Sources */,
+				AC6E631315D3FEF100CB309C /* DragDropManager2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +515,7 @@
 				AC262D9415C8074D0093134C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC262D9515C8074D0093134C /* Build configuration list for PBXNativeTarget "dragAndDropTestTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +524,7 @@
 				AC262D9715C8074D0093134C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

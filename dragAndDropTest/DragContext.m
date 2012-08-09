@@ -17,6 +17,7 @@
         self.draggedView = draggedView;
         self.originalPosition = draggedView.frame.origin;
         self.originalView = draggedView.superview;
+        _viewCopy = NO;
     }
     
     return self;
@@ -30,10 +31,13 @@
         
     } completion:^(BOOL finished) {
         [self.draggedView removeFromSuperview];
-        [self.originalView addSubview:self.draggedView];
-        CGRect frame = self.draggedView.frame;
-        frame.origin = self.originalPosition;
-        self.draggedView.frame = frame;
+        
+        if (_viewCopy == NO) {
+            [self.originalView addSubview:self.draggedView];
+            CGRect frame = self.draggedView.frame;
+            frame.origin = self.originalPosition;
+            self.draggedView.frame = frame;
+        }
     }];
         
     //[self.draggedView removeFromSuperview];

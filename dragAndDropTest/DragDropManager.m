@@ -29,6 +29,38 @@
     return self;
 }
 
+/*- (UIView *)searchSubjectHowHitsPointInRecognizer:(UIPanGestureRecognizer *)recognizer {
+ for (UIView *dragSubject in self.dragSubjects) {
+ CGPoint pointInSubjectsView = [recognizer locationInView:dragSubject];
+ BOOL pointInSideDraggableObject = [dragSubject pointInside:pointInSubjectsView withEvent:nil];
+ if (pointInSideDraggableObject) {
+ return dragSubject;
+ }
+ }
+ return nil;
+ }*/
+
+- (UIView *)searchSubjectHowHitsPointInRecognizer:(UIPanGestureRecognizer *)recognizer {
+    for (UIView *dropView in self.dropAreas) {
+        CGPoint pointInSubjectsView = [recognizer locationInView:dropView];
+        BOOL pointInSideDraggableObject = [dropView pointInside:pointInSubjectsView withEvent:nil];
+        if (pointInSideDraggableObject) {
+            UIView *dragSubject = nil;
+            
+            int index = dropView.subviews.count-1;
+            if (index >= 0) {
+                dragSubject = dropView.subviews[dropView.subviews.count-1];
+            }
+            return dragSubject;
+        }
+    }
+    return nil;
+}
+
+- (DragContext *)generateDragContextWithDragSubject:(UIView *)dragSubject accordingToGesture:(UIPanGestureRecognizer *)recognizer {
+    return [[DragContext alloc] initWithDraggedView:dragSubject];
+}
+
 - (void)beginDragObject:(UIView *)draggedView accordingToGesture:(UIPanGestureRecognizer *)recognizer {
     CGPoint pointOnView =[recognizer locationInView:recognizer.view];
     CGPoint pointOnView2 = CGPointMake(pointOnView.x - self.dragContext.startPointInSubjectsView.x, pointOnView.y - self.dragContext.startPointInSubjectsView.y);
@@ -41,7 +73,7 @@
 }
 
 /*- (void)beginDragObject:(UIView *)draggedView accordingToGesture:(UIPanGestureRecognizer *)recognizer {
-    [self dragObject:dragSubject accordingToGesture:recognizer];
+    [self dragObject:draggedView accordingToGesture:recognizer];
 }*/
 
 - (void)dragObject:(UIView *)draggedView accordingToGesture:(UIPanGestureRecognizer *)recognizer {
@@ -61,8 +93,8 @@
      draggedView.frame = frame;
 }*/
 
-- (BOOL)dragObject:(UIView *)viewBeingDragged startedFromView:(UIView *)originalView endedInView:(UIView *)dropArea {
-    self.uiTapGestureRecognizer.enabled = NO;
+- (BOOL)dragObject:(UIView *)viewBeingDragged startedFromView:(UIView *)originalView endedInView:(UIView *)dropArea accordingToGesture:(UIPanGestureRecognizer *)recognizer {
+    recognizer.enabled = NO;
     
     //wird erst mach animation gemacht
     /*[viewBeingDragged removeFromSuperview];
@@ -94,38 +126,10 @@
             //füge in der neuen Reihe hinten an. view in dropview
             viewBeingDragged.center = CGPointMake((viewBeingDragged.frame.size.width / 2) + (viewBeingDragged.frame.size.width * k), (dropArea.frame.size.height / 2));
         
-        self.uiTapGestureRecognizer.enabled = YES;
+        recognizer.enabled = YES;
     }];
 
     return YES;
-}
-
-/*- (UIView *)searchSubjectHowHitsPointInRecognizer:(UIPanGestureRecognizer *)recognizer {
-    for (UIView *dragSubject in self.dragSubjects) {
-        CGPoint pointInSubjectsView = [recognizer locationInView:dragSubject];
-        BOOL pointInSideDraggableObject = [dragSubject pointInside:pointInSubjectsView withEvent:nil];
-        if (pointInSideDraggableObject) {
-            return dragSubject;
-        }
-    }
-    return nil;
-}*/
-
-- (UIView *)searchSubjectHowHitsPointInRecognizer:(UIPanGestureRecognizer *)recognizer {
-    for (UIView *dropView in self.dropAreas) {
-        CGPoint pointInSubjectsView = [recognizer locationInView:dropView];
-        BOOL pointInSideDraggableObject = [dropView pointInside:pointInSubjectsView withEvent:nil];
-        if (pointInSideDraggableObject) {
-            UIView *dragSubject = nil;
-            
-            int index = dropView.subviews.count-1;
-            if (index >= 0) {
-                dragSubject = dropView.subviews[dropView.subviews.count-1];
-            }
-            return dragSubject;
-        }
-    }
-    return nil;
 }
 
 - (void)dragging:(id)sender {
@@ -134,21 +138,24 @@
         case UIGestureRecognizerStateBegan: {            
             UIView *dragSubject = [self searchSubjectHowHitsPointInRecognizer:recognizer];
             
-            if (dragSubject) {                
+            if (dragSubject) {
                 CGPoint pointInSubjectsView = [recognizer locationInView:dragSubject];            
 #ifdef DEBUG
                 NSLog(@"point%@ inside subject%@", NSStringFromCGPoint(pointInSubjectsView), NSStringFromCGRect(dragSubject.frame));
                 NSLog(@"started dragging an object");
 #endif
-                self.dragContext = [[DragContext alloc] initWithDraggedView:dragSubject];
+                self.dragContext = [self generateDragContextWithDragSubject:dragSubject accordingToGesture:recognizer];
                 self.dragContext.startPointInSubjectsView = pointInSubjectsView;
-                [dragSubject removeFromSuperview];
-                [recognizer.view addSubview:dragSubject];
                 
-                [self beginDragObject:dragSubject accordingToGesture:recognizer];
+                [recognizer.view addSubview:self.dragContext.draggedView];
+                if(self.dragContext.isViewCopy == NO) {
+                    [self.dragContext.draggedView removeFromSuperview];
+                }
+                    
+                [self beginDragObject:self.dragContext.draggedView accordingToGesture:recognizer];
 
                 //speichert neue Position im main view für animation
-                self.dragContext.newPosition = dragSubject.frame.origin;
+                self.dragContext.newPosition = self.dragContext.draggedView.frame.origin;
             } else {
 #ifdef DEBUG
                 NSLog(@"started drag outside drag subjects");
@@ -174,13 +181,14 @@
                 for (UIView *dropArea in self.dropAreas) {
                     //CGPoint pointInDropView = [recognizer locationInView:dropArea];
                     
-                    //mittelpunkt von viewBeingDragged muß in dropArea sein um wechsel auszuführen
+                    //mittelpunkt von viewBeingDragged
                     CGPoint pointInDropView = CGPointMake(viewBeingDragged.center.x - dropArea.frame.origin.x, viewBeingDragged.center.y - dropArea.frame.origin.y) ;
 #ifdef DEBUG
                     NSLog(@"tag %i pointInDropView %@ center of dragged view %@", dropArea.tag, NSStringFromCGPoint(pointInDropView), NSStringFromCGPoint(centerOfDraggedView));
 #endif
+                    //mittelpunkt von viewBeingDragged muß in dropArea sein um wechsel auszuführen
                     if ([dropArea pointInside:pointInDropView withEvent:nil]) {
-                        droppedViewInKnownArea = [self dragObject:viewBeingDragged startedFromView:self.dragContext.originalView endedInView:dropArea];
+                        droppedViewInKnownArea = [self dragObject:viewBeingDragged startedFromView:self.dragContext.originalView endedInView:dropArea accordingToGesture:recognizer];
 #ifdef DEBUG
                         NSLog(@"dropped subject %@ on to view tag %i", NSStringFromCGRect(viewBeingDragged.frame), dropArea.tag);
 #endif

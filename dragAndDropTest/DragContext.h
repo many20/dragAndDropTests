@@ -19,6 +19,7 @@
 @property (nonatomic, strong) UIView *originalView;
 
 @property (nonatomic) CGPoint startPointInSubjectsView;
+@property (nonatomic, getter = isViewCopy) BOOL viewCopy;
 
 - (id)initWithDraggedView:(UIView *)draggedView;
 - (void)snapToOriginalPosition;
