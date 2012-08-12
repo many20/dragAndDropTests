@@ -18,6 +18,7 @@
         self.originalPosition = draggedView.frame.origin;
         self.originalView = draggedView.superview;
         _viewCopy = NO;
+        _deleteViewOn = NO;
     }
     
     return self;

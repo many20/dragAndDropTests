@@ -386,7 +386,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" id="HNX-vc-ulu">
+                                    <view tag="1" contentMode="scaleToFill" id="HNX-vc-ulu">
                                         <rect key="frame" x="192" y="5" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -405,10 +405,14 @@
                                                     <action selector="tap:" destination="WCB-5Z-nit" eventType="touchUpInside" id="YfA-gP-NIF"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="pngTest.png" id="es7-PI-laQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" id="7OA-bm-DOy">
+                                    <view tag="1" contentMode="scaleToFill" id="7OA-bm-DOy">
                                         <rect key="frame" x="250" y="5" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -427,54 +431,27 @@
                                                     <action selector="tap:" destination="WCB-5Z-nit" eventType="touchUpInside" id="oVj-gH-i1q"/>
                                                 </connections>
                                             </button>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" id="pm1-xq-V42" customClass="SVGView">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             </view>
-                            <view contentMode="scaleToFill" id="e9N-fr-TuF">
-                                <rect key="frame" x="0.0" y="60" width="320" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" id="1lf-hX-sfd">
-                                        <rect key="frame" x="10" y="5" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" id="rIR-iL-NuF">
-                                        <rect key="frame" x="70" y="5" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" id="v9b-Ie-3PW">
-                                        <rect key="frame" x="130" y="5" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" id="2N4-VQ-QYs">
-                                        <rect key="frame" x="190" y="5" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" id="a4i-r2-LJy">
-                                        <rect key="frame" x="250" y="5" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                            </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" maximumZoomScale="10" id="Ofo-4Q-7Ra">
-                                <rect key="frame" x="0.0" y="120" width="320" height="291"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" maximumZoomScale="30" id="Ofo-4Q-7Ra">
+                                <rect key="frame" x="0.0" y="60" width="320" height="350"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="mJ7-US-zvC">
-                                        <rect key="frame" x="0.0" y="0.0" width="640" height="291"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="640" height="350"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="q4h-DS-152">
-                                                <rect key="frame" x="320" y="10" width="180" height="185"/>
+                                                <rect key="frame" x="230" y="112" width="180" height="185"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
@@ -504,17 +481,13 @@
                     <connections>
                         <outlet property="scrollView" destination="Ofo-4Q-7Ra" id="gl9-v2-rI0"/>
                         <outlet property="scrollViewDelegate" destination="aJA-Si-KOS" id="TRD-1Z-EXs"/>
+                        <outlet property="svgView" destination="pm1-xq-V42" id="CE0-z5-08w"/>
                         <outletCollection property="draggableSubjects1" destination="tKs-JL-ttl" id="o2B-jV-UmP"/>
                         <outletCollection property="draggableSubjects1" destination="T9F-AB-2wj" id="jAE-Wi-2w1"/>
                         <outletCollection property="draggableSubjects1" destination="GUA-c7-TDs" id="jjz-Fl-ve6"/>
                         <outletCollection property="draggableSubjects1" destination="HNX-vc-ulu" id="Avc-Ma-2YM"/>
                         <outletCollection property="draggableSubjects1" destination="7OA-bm-DOy" id="g3P-VF-sbG"/>
-                        <outletCollection property="draggableSubjects2" destination="1lf-hX-sfd" id="0O0-bg-xPU"/>
-                        <outletCollection property="draggableSubjects2" destination="rIR-iL-NuF" id="IxI-Dp-Btz"/>
-                        <outletCollection property="draggableSubjects2" destination="v9b-Ie-3PW" id="xPC-VI-gj4"/>
-                        <outletCollection property="draggableSubjects2" destination="2N4-VQ-QYs" id="sZk-0r-LgA"/>
-                        <outletCollection property="draggableSubjects2" destination="a4i-r2-LJy" id="PvP-rS-0Ky"/>
-                        <outletCollection property="droppableAreas1" destination="mJ7-US-zvC" id="ANx-Fj-NgX"/>
+                        <outletCollection property="droppableAreas1" destination="YWf-5b-NhE" id="Fur-eO-T83"/>
                     </connections>
                 </viewController>
                 <customObject id="aJA-Si-KOS" customClass="UIScrollViewDelegate">
@@ -530,6 +503,7 @@
     <resources>
         <image name="first" width="16" height="16"/>
         <image name="first.png" width="30" height="30"/>
+        <image name="pngTest.png" width="500" height="500"/>
         <image name="second" width="16" height="16"/>
     </resources>
     <classes>
@@ -539,6 +513,9 @@
                 <relationship kind="outletCollection" name="draggableSubjects" candidateClass="UIView"/>
                 <relationship kind="outletCollection" name="droppableAreas" candidateClass="UIView"/>
             </relationships>
+        </class>
+        <class className="SVGView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SVGView.h"/>
         </class>
         <class className="SecondViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
@@ -559,6 +536,7 @@
                 <relationship kind="action" name="zoomTap:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="scrollViewDelegate" candidateClass="UIScrollViewDelegate"/>
+                <relationship kind="outlet" name="svgView" candidateClass="SVGView"/>
                 <relationship kind="outletCollection" name="draggableSubjects1" candidateClass="UIView"/>
                 <relationship kind="outletCollection" name="draggableSubjects2" candidateClass="UIView"/>
                 <relationship kind="outletCollection" name="droppableAreas1" candidateClass="UIView"/>

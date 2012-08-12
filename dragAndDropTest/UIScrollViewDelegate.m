@@ -15,7 +15,7 @@
     self = [super init];
     if (self) {
         _minimumZoomScale = 1.0;
-        _maximumZoomScale = 10.0;
+        _maximumZoomScale = 30.0;
         _zoomEnabled = YES;
         
         self.scrollView.scrollsToTop = NO;

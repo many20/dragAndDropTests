@@ -10,6 +10,9 @@
 #import "DragDropManager2.h"
 #import "UIScrollViewDelegate.h"
 
+#import "SVGKit.h"
+#import "SVGView.h"
+
 @interface ThirdViewController : UIViewController <UIGestureRecognizerDelegate, DragDropManagerDelegate> {
     
 }
@@ -29,13 +32,10 @@
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 
 
-
+@property (nonatomic, retain) IBOutlet SVGView *svgView;
 
 - (IBAction)tap:(UIButton *)sender;
 - (IBAction)zoomTap:(UIButton *)sender;
-
-
-- (void)addNewView:(UIView *)view;
 
 
 @end

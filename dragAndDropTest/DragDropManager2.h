@@ -12,7 +12,7 @@
 
 @protocol DragDropManagerDelegate <NSObject>
 
-- (void)addNewView:(UIView *)view;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -21,8 +21,13 @@
 
     
 }
-    
+ 
+@property (nonatomic, weak) NSMutableArray *generatedSubjects;
+@property (nonatomic, getter = isViewCopy) BOOL viewCopy;
+
 @property (nonatomic, weak) id<DragDropManagerDelegate> delegate;
+
+
 
 @end
 

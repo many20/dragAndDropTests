@@ -20,6 +20,8 @@
 
 @property (nonatomic) CGPoint startPointInSubjectsView;
 @property (nonatomic, getter = isViewCopy) BOOL viewCopy;
+@property (nonatomic, getter = isDeleteViewOn) BOOL deleteViewOn;
+
 
 - (id)initWithDraggedView:(UIView *)draggedView;
 - (void)snapToOriginalPosition;
